@@ -2,24 +2,24 @@ package cl.inacap.simpsonscita.dto;
 
 public class Personaje {
 
-    private String cita;
-    private String nombre;
+    private String quote;
+    private String character;
     private String image;
 
-    public String getCita() {
-        return cita;
+    public String getQuote() {
+        return quote;
     }
 
-    public void setCita(String cita) {
-        this.cita = cita;
+    public void setQuote(String quote) {
+        this.quote = quote;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getCharacter() {
+        return character;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setCharacter(String character) {
+        this.character = character;
     }
 
     public String getImage() {
