@@ -25,14 +25,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import cl.inacap.simpsonscita.adapters.Personaje2Adapter;
 import cl.inacap.simpsonscita.adapters.PersonajesAdapater;
 import cl.inacap.simpsonscita.dto.Personaje;
+import cl.inacap.simpsonscita.dto.Personaje2;
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView personajesLv;
     private List<Personaje> personajes = new ArrayList<>();
+    //private List<Personaje2> personajes = new ArrayList<>();
     private PersonajesAdapater adapter;
+    private Personaje2Adapter adapter2;
     private Spinner spin;
     private Button buton;
     private RequestQueue queue;
@@ -48,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         this.spin = findViewById(R.id.spinner);
         this.buton = findViewById(R.id.cita_btn);
         this.personajesLv = findViewById(R.id.list);
-        queue = Volley.newRequestQueue(this);
+
 
 
         Integer[] frases = new Integer[10];
@@ -61,20 +65,26 @@ public class MainActivity extends AppCompatActivity {
         spin.setAdapter(adapterS);
         this.adapter = new PersonajesAdapater(this,R.layout.personaje_list,this.personajes);
         this.personajesLv.setAdapter(this.adapter);
+        //this.adapter2 = new Personaje2Adapter(this,R.layout.personaje_list,this.personajes);
+        //this.personajesLv.setAdapter(this.adapter2);
         this.buton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int frases = (int) spin.getSelectedItem();
+                String url = "https://thesimpsonsquoteapi.glitch.me/quotes?count=6";
+                //String url = "https://rickandmortyapi.com/api/character";
+                queue = Volley.newRequestQueue(MainActivity.this);
 
                 JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET,
-                        "https://thesimpsonsquoteapi.glitch.me/quotes?count="+ frases, null,
+                        url, null,
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
                                 try {
                                     personajes.clear();
+                                    //Personaje2[] arreglo = new Gson().fromJson(response.getString("results") ,Personaje2[].class);
                                     Personaje[] arreglo = new Gson()
-                                            .fromJson(response.toString()
+                                            .fromJson(response.getString("")
                                                     ,Personaje[].class);
                                     personajes.addAll(Arrays.asList(arreglo));
                                 }catch (Exception ex){
@@ -82,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                                     Log.e("Personajes","Error de peticion");
                                 }finally {
                                     adapter.notifyDataSetChanged();
+                                    //adapter2.notifyDataSetChanged();
                                 }
 
                             }
@@ -90,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         personajes.clear();
                         Log.e("Personajes","Error de peticion 2");
+                        //adapter2.notifyDataSetChanged();
                         adapter.notifyDataSetChanged();
                     }
                 });
