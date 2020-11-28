@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_top10">10dp</dimen>
+    <dimen name="pad5">5dp</dimen>
+    <dimen name="pad3">3dp</dimen>
 </resources>

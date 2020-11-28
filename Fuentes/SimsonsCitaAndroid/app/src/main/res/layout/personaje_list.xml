@@ -8,9 +8,9 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="@dimen/margin_top10"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="10dp"
@@ -18,41 +18,48 @@
 
         <TextView
             android:id="@+id/citaVw"
-            android:layout_width="wrap_content"
+            android:layout_width="228dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:text="TextView"
             android:background="@drawable/borde_redondo"
+            android:paddingLeft="@dimen/pad5"
+            android:paddingRight="@dimen/pad5"
+            android:paddingBottom="@dimen/pad3"
+            android:paddingTop="@dimen/pad3"
+            android:text="TextView"
 
             android:textColor="@color/purple_500" />
 
         <TextView
             android:id="@+id/nombreVw"
-            android:background="@drawable/borde_redondo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="17dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/borde_redondo"
             android:text="TextView"
+            android:paddingLeft="@dimen/pad5"
+            android:paddingRight="@dimen/pad5"
+            android:paddingBottom="@dimen/pad3"
+            android:paddingTop="@dimen/pad3"
 
             android:textColor="@color/purple_500" />
 
         <ImageView
             android:id="@+id/imageVw"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
             android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="1dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
             tools:srcCompat="@tools:sample/avatars" />
