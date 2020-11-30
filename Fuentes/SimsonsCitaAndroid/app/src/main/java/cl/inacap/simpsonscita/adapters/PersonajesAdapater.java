@@ -44,7 +44,7 @@ public class PersonajesAdapater extends ArrayAdapter<Personaje> {
         ImageView image = rowView.findViewById(R.id.imageVw);
 
         nombreTxt.setText(personajes.get(position).getCharacter());
-        citaTxt.setText(personajes.get(position).getQuote());
+        citaTxt.setText('"' + personajes.get(position).getQuote() + '"');
         Picasso.get().load(this.personajes.get(position).getImage()).resize(300,300)
                 .centerCrop().into(image);
 

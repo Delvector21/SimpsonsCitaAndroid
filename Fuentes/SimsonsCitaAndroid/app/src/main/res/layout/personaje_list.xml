@@ -31,7 +31,6 @@
             android:paddingBottom="@dimen/pad3"
             android:paddingTop="@dimen/pad3"
             android:text="TextView"
-
             android:textColor="@color/purple_500" />
 
         <TextView
@@ -42,7 +41,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="17dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/borde_redondo"
+            android:textStyle="bold"
             android:text="TextView"
             android:paddingLeft="@dimen/pad5"
             android:paddingRight="@dimen/pad5"
