@@ -74,11 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
                                 try {
                                     personajes.clear();
-                                    //JSONArray jsonArray = new JSONArray(response);
-                                    //for (int i = 0; i <jsonArray.length() ; i++) {
-                                     //   jsonObject = jsonArray.getJSONObject(i);
-
-                                   // }
                                     Personaje[] arreglo = new Gson()
                                             .fromJson(response
                                                     ,Personaje[].class);
